@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Social extends Model
 {
     protected $fillable = [
-        'title', 'description', 'link','image','priority'
+        'name','icon', 'link', 'priority',
     ];
 }

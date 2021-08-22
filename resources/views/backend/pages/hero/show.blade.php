@@ -15,7 +15,7 @@
         @foreach ($heroData as $row)
             <tr>
             <td></td>
-                <td><img src="{{ asset('public/img/'.$row->image) }}" class="rounded-circle z-depth-2 mb-2" alt="Cinque Terre" style="width:200px;height:200px;"></td>
+                <td><img src="{{ asset('public/img/profile_image/'.$row->image) }}" class="rounded-circle z-depth-2 mb-2" alt="Cinque Terre" style="width:200px;height:200px;"></td>
             </tr>
             <tr>
                 <th>Name:  </th>
@@ -65,6 +65,7 @@
         </table>
         
       </div>
+      <a class="nav-link" href="{{ route('admin.hero') }}"><button  class="btn btn-success  float-right">Back</button></a>
     </div>
   </div>
   <!-- content-wrapper ends -->

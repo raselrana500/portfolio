@@ -24,7 +24,7 @@
         <div class="modal-dialog modal-lg modal-dialog-scrollable">
           <div class="modal-content">
 
-            <div class="modal-header text-center">
+            <div class="modal-header">
               <h2 class="modal-title" style="color:blue;" id="exampleModalLabel">{{$row->title}}</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -33,7 +33,7 @@
             <hr>
             <h3 class="mb-2">Feature of this Project</h3>
             <hr>
-            <p class="mb-2">{{$row->description}}</p>
+            <p class="mb-2">{!! nl2br($row->description) !!}</p>
             <hr>
             <a href="{{ $row->link }}" target="blank" class="btn btn-primary">Live View</a>
             

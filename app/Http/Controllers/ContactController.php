@@ -14,7 +14,22 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $contact=Contact::orderBy('id','desc')->get();
+        return view('backend.pages.contact.index',compact('contact'));
+    }
+
+    public function showSingleData(contact $id)
+    {
+        $showContact =Contact::find($id);
+        return view('backend.pages.contact.show',compact('showContact'));
+    }
+
+    public function Delete($id)
+    {
+        $data =Contact::find($id);
+        $data->delete();
+        session()->flash('error','Messege Deleted successfully !!');
+        return redirect()->back();
     }
 
     /**
@@ -71,10 +86,7 @@ class ContactController extends Controller
      * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show(Contact $contact)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.

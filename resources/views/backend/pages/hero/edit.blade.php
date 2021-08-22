@@ -8,13 +8,19 @@
         <h2>Hero Information</h2> 
       </div>
       <div class="card-body">
-        <form method="POST" action="" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('admin.hero.update',$data->id) }}" enctype="multipart/form-data">
           @csrf
           @include('backend.partials.messagess')
           <div class="form-group">
             <label></label>
-            <img src="{{ asset('public/img/'.$data->image) }}" class="rounded-circle z-depth-2 mb-2" alt="Cinque Terre" style="width:200px;height:200px;">
+            <img src="{{ asset('public/img/profile_image/'.$data->image) }}" class="rounded-circle z-depth-2 mb-2" alt="Cinque Terre" style="width:200px;height:200px;">
           </div>
+          
+          <div class="form-group">
+            <label><strong>Upload Your New Image</strong></label>
+            <input type="file" name="image" class="form-control">
+          </div>
+
           <div class="form-group">
             <label><strong>name</strong></label>
             <input type="text" name="name" class="form-control"  value="{{ $data->name }}">
@@ -56,15 +62,19 @@
           <input type="text" name="linkedlink" class="form-control"  value="{{ $data->linkedlink }}">
           </div>
           <div class="form-group">
+            <label><strong>Github Link</strong></label>
+          <input type="text" name="github" class="form-control"  value="{{ $data->github }}">
+          </div>
+          <div class="form-group">
             <label><strong>Upload Your CV</strong></label>
-            <input type="file" name="cvlink" id="cvlink" class="form-control">
+            <input type="file" name="cvlink" class="form-control">
           </div>
           
 
         </div>
           <p><button type="submit" class="btn btn-primary ml-4">Update</button></p>
         </form>
-      </div>
+      <a class="nav-link" href="{{ route('admin.hero') }}"><button  class="btn btn-success  float-right">Back</button></a>
     </div>
     
   <!-- content-wrapper ends -->

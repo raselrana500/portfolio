@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectsTable extends Migration
+class CreateFootersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('footers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title')->nullable;
-            $table->text('description')->nullable;
-            $table->string('link')->nullable;
-            $table->string('image')->nullable;
-            $table->integer('priority')->nullable;
+            $table->string('name');
+            $table->string('declare');
+            $table->string('copyright');
+            $table->string('developer');
             $table->timestamps();
         });
     }
@@ -31,6 +30,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('footers');
     }
 }

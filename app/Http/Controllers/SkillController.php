@@ -14,7 +14,8 @@ class SkillController extends Controller
      */
     public function index()
     {
-        //
+        $skill=Skill::orderBy('id','desc')->get();
+        return view('backend.pages.skill.index',compact('skill'));
     }
 
     /**
@@ -22,10 +23,11 @@ class SkillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function showCreatePage()
     {
-        //
+        return view('backend.pages.skill.insertskill');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +37,28 @@ class SkillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'skillname' => 'required|max:150',
+            'skillvalue' => 'required',
+            'priority' => 'required',
+        ]);
+
+
+
+        $data = new Skill;
+        $data->skillname = $request->skillname;
+        $data->skillvalue = $request->skillvalue;
+        $data->priority = $request->priority;
+
+        $data->save();
+        if ($data->save()) {
+            session()->flash('success','Success');
+            return redirect()->back();
+        }else{
+            session()->flash('error','Not Inserted');
+            return redirect()->back();
+        }
+        return redirect()->back();
     }
 
     /**
@@ -55,9 +78,10 @@ class SkillController extends Controller
      * @param  \App\skill  $skill
      * @return \Illuminate\Http\Response
      */
-    public function edit(skill $skill)
+    public function edit($id)
     {
-        //
+        $data =Skill::find($id);
+        return view('backend.pages.skill.edit',compact('data'));
     }
 
     /**
@@ -67,9 +91,36 @@ class SkillController extends Controller
      * @param  \App\skill  $skill
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, skill $skill)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'skillname' => 'required|max:150',
+            'skillvalue' => 'required',
+            'priority' => 'required',
+        ]);
+
+
+
+        $data =Skill::find($id);
+        $data->skillname = $request->skillname;
+        $data->skillvalue = $request->skillvalue;
+        $data->priority = $request->priority;
+
+        $data->save();
+        if ($data->save()) {
+            session()->flash('success','Success');
+            return redirect()->back();
+        }else{
+            return redirect()->back();
+        }
+    }
+
+    public function Delete($id){
+
+        $data =Skill::find($id);
+        $data->delete();
+        session()->flash('error','Skill Deleted successfully !!');
+        return redirect()->back();
     }
 
     /**

@@ -5,7 +5,9 @@
     <!-- Page Title Header Starts-->
     <div class="card">
       <div class="card-header">
-        <strong>Manage Product</strong> 
+        <strong>Manage Social link</strong> 
+        <a class="nav-link float-right" href="{{ route('admin.social.add') }}"><button  class="btn btn-success">Add New Link</button></a>
+        
       </div>
       <div class="card-body">
         @include('backend.partials.messagess')
@@ -13,27 +15,26 @@
             <thead>
               <tr>
                 <th>#</th>
-                  <th>Id</th>
-                  <th>Title</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
+                  <th>Name</th>
+                  <th>Icon name</th>
+                  <th>Link</th>
+                  <th>Priority</th>
                   <th style="text-align:center;">Action</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($products as $product)
+              @foreach ($social as $row)
               <tr>
                   
                   <td>{{ $loop->index + 1 }}</td>
-                  <td>{{ $product->id }}</td>
-                  <td>{{ $product->title }}</td>
-                  <td>{{ $product->price }}</td>
-                  <td>{{ $product->quantity }}</td>
+                  <td>{{ $row->name }}</td>
+                  <td>{{ $row->icon }}</td>
+                  <td>{{ $row->link }}</td>
+                  <td>{{ $row->priority }}</td>
                   
                   <td style="text-align:center;">
-                    <a class="btn btn-success" href="">Show</a>
-                    <a class="btn btn-info" href="{{ route('admin.pages.product.edit',$product->id) }}">Edit</a>
-                    <a class="btn btn-danger" href="{{ route('admin.pages.product.delete',$product->id) }}">Delete</a>
+                    <!-- <a class="btn btn-info btn-sm" href="{{ route('admin.footer.edit',$row->id) }}">Edit</a> -->
+                    <!-- <a class="btn btn-danger btn-sm"  href="{{ route('admin.contact.manage.delete',$row->id) }}">Delete</a> -->
                   </td>
                   
                     

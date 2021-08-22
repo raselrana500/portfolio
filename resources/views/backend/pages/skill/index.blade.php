@@ -5,33 +5,35 @@
     <!-- Page Title Header Starts-->
     <div class="card">
       <div class="card-header">
-        <h2>Hero Information</h2> 
+        <strong>Manage Skill Information</strong> 
+        <a class="nav-link float-right" href="{{ route('admin.pages.skill.new') }}"><button  class="btn btn-success">Add New Skill</button></a>
       </div>
       <div class="card-body">
         @include('backend.partials.messagess')
         <table class="table table-hover table-striped " id="dataTable">
             <thead>
               <tr>
+                <th>#</th>
                   <th>Id</th>
-                  <th>Name</th>
-                  <th>Email</th>
-                  <th>Image</th>
+                  <th>Skill Name</th>
+                  <th>Skill Value</th>
+                  <th>Priority</th>
                   <th style="text-align:center;">Action</th>
               </tr>
             </thead>
             <tbody>
-              @foreach ($hero as $row)
+              @foreach ($skill as $row)
               <tr>
                   
-                  <!-- <td>{{ $loop->index + 1 }}</td> -->
+                  <td>{{ $loop->index + 1 }}</td>
                   <td>{{ $row->id }}</td>
-                  <td>{{ $row->name }}</td>
-                  <td>{{ $row->email }}</td>
-                  <td><img src="{{ asset('public/img/profile_image/'.$row->image) }}" class="rounded-circle z-depth-2 mb-2" alt="Cinque Terre" style="width:50px;height:50px;"><br/></td>
+                  <td>{{ $row->skillname }}</td>
+                  <td>{{ $row->skillvalue }}</td>
+                  <td>{{ $row->priority }}</td>
                   
                   <td style="text-align:center;">
-                    <a class="btn btn-success" href="{{ route('admin.hero.view',$row->id) }}">View</a>
-                    <a class="btn btn-info" href="{{ route('admin.hero.edit',$row->id) }}">Edit</a>
+                    <a class="btn btn-info" href="{{ route('admin.pages.skill.edit',$row->id) }}">Edit</a>
+                    <a class="btn btn-danger" href="{{ route('admin.pages.skill.delete',$row->id) }}">Delete</a>
                   </td>
                   
                     
