@@ -16,6 +16,13 @@
                 <li>Portland par 127,Orlando, FL</li>
                 <li>(123) 456-7891</li>
                 <li>raselrana500@example.com</li>
+                <li>raselrana500@example.com</li>
+                <li>raselrana500@example.com</li>
+                <li>raselrana500@example.com</li>
+                <li>raselrana500@example.com</li>
+                <li>raselrana500@example.com</li>
+                <li>raselrana500@example.com</li>
+                <li>raselrana500@example.com</li>
               </ul>
             </div>
 
@@ -25,6 +32,12 @@
               <h5>2015 - 2016</h5>
               <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
               <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p>
+            </div>
+            <div class="resume-item">
+              <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+              <h5>2010 - 2014</h5>
+              <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+              <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
             </div>
             <div class="resume-item">
               <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>

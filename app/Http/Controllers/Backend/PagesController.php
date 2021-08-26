@@ -1,24 +1,26 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
-use App\SkillDetails;
+
+use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use Auth;
 
-class SkillDetailsController extends Controller
+class PagesController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:admin');
+    // }
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+
+    public function index(){
+        return view('backend.pages.index');
     }
 
     /**
@@ -45,10 +47,10 @@ class SkillDetailsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\SkillDetails  $skillDetails
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(SkillDetails $skillDetails)
+    public function show($id)
     {
         //
     }
@@ -56,10 +58,10 @@ class SkillDetailsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\SkillDetails  $skillDetails
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(SkillDetails $skillDetails)
+    public function edit($id)
     {
         //
     }
@@ -68,10 +70,10 @@ class SkillDetailsController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\SkillDetails  $skillDetails
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SkillDetails $skillDetails)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -79,10 +81,10 @@ class SkillDetailsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\SkillDetails  $skillDetails
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SkillDetails $skillDetails)
+    public function destroy($id)
     {
         //
     }

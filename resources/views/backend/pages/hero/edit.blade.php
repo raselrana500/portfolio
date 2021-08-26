@@ -42,30 +42,6 @@
             <textarea name="phone" class="form-control" cols="20" rows="3">{{ $data->phone }}</textarea>
           </div>
           <div class="form-group">
-            <label><strong>Facebook Link</strong></label>
-            <input type="text" name="facebooklink" class="form-control"  value="{{ $data->facebooklink }}">    
-          </div>
-          <div class="form-group">
-            <label><strong>Instagram Link</strong></label>
-            <input type="text" name="instagramlink" class="form-control"  value="{{ $data->instagramlink }}">
-          </div>
-          <div class="form-group">
-            <label><strong>Twitter Link</strong></label>
-            <input type="text" name="twitterlink" class="form-control"  value="{{ $data->twitterlink }}">
-          </div>
-          <div class="form-group">
-            <label><strong>Youtube Link</strong></label>
-            <input type="text" name="youtubelink" class="form-control"  value="{{ $data->youtubelink }}">
-          </div>
-          <div class="form-group">
-            <label><strong>LinkedIn Link</strong></label>
-          <input type="text" name="linkedlink" class="form-control"  value="{{ $data->linkedlink }}">
-          </div>
-          <div class="form-group">
-            <label><strong>Github Link</strong></label>
-          <input type="text" name="github" class="form-control"  value="{{ $data->github }}">
-          </div>
-          <div class="form-group">
             <label><strong>Upload Your CV</strong></label>
             <input type="file" name="cvlink" class="form-control">
           </div>

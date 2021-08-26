@@ -18,12 +18,9 @@ class CreateHeroesTable extends Migration
             $table->string('image')->nullable();
             $table->string('name')->nullable();
             $table->string('profession')->nullable();
-            $table->string('facebooklink')->nullable();
-            $table->string('instagramlink')->nullable();
-            $table->string('twitterlink')->nullable();
-            $table->string('youtubelink')->nullable();
-            $table->string('linkedlink')->nullable();
-            $table->string('github')->nullable();
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone')->nullable();
             $table->string('cvlink')->nullable();
             $table->timestamps();
         });

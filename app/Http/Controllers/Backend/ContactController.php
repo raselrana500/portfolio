@@ -1,23 +1,36 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+use App\Contact;
 use Illuminate\Http\Request;
-use Auth;
+use App\Http\Controllers\Controller;
 
-class BackendPagesController extends Controller
+class ContactController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:admin');
-    // }
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
 
-    public function index(){
-        return view('backend.pages.index');
+    public function index()
+    {
+        $contact=Contact::orderBy('id','desc')->get();
+        return view('backend.pages.contact.index',compact('contact'));
+    }
+
+    public function showSingleData(contact $id)
+    {
+        $showContact =Contact::find($id);
+        return view('backend.pages.contact.show',compact('showContact'));
+    }
+
+    public function Delete($id)
+    {
+        $data =Contact::find($id);
+        $data->delete();
+        session()->flash('error','Messege Deleted successfully !!');
+        return redirect()->back();
     }
 
     /**
@@ -27,8 +40,11 @@ class BackendPagesController extends Controller
      */
     public function create()
     {
-        //
+        
+        
     }
+    
+    
 
     /**
      * Store a newly created resource in storage.
@@ -44,21 +60,18 @@ class BackendPagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+    
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Contact $contact)
     {
         //
     }
@@ -67,10 +80,10 @@ class BackendPagesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Contact $contact)
     {
         //
     }
@@ -78,10 +91,10 @@ class BackendPagesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Contact  $contact
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Contact $contact)
     {
         //
     }

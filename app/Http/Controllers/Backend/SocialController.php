@@ -1,6 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
+
+
+use App\Http\Controllers\Controller;
 
 use App\Social;
 use Illuminate\Http\Request;

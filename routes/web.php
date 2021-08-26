@@ -14,46 +14,46 @@
 //     $hero=Hero::orderBy('id','desc')->get();
 //     return view('frontend.layouts.master',compact('hero'));
 // });
-Route::get('/', 'HeroController@index')->name('index');
-Route::get('/contact/store', 'ContactController@create')->name('contact.store');
-Route::get('/admin', 'BackendPagesController@index')->name('admin.index');
+Route::get('/', 'Frontend\HeroController@index')->name('index');
+Route::post('/contact', 'Frontend\ContactController@insertContactInfo')->name('contact.store');
+Route::get('/admin', 'Backend\PagesController@index')->name('admin.index');
 
 //hero section route
-Route::get('/admin/hero', 'HeroController@ViewInfo')->name('admin.hero');
-Route::get('/admin/hero/{id}', 'HeroController@ViewSingleData')->name('admin.hero.view');
-Route::get('/admin/hero/edit/{id}', 'HeroController@Edit')->name('admin.hero.edit');
-Route::post('/admin/hero/update/{id}', 'HeroController@update')->name('admin.hero.update');
+Route::get('/admin/hero', 'Backend\HeroController@ViewInfo')->name('admin.hero');
+Route::get('/admin/hero/{id}', 'Backend\HeroController@ViewSingleData')->name('admin.hero.view');
+Route::get('/admin/hero/edit/{id}', 'Backend\HeroController@Edit')->name('admin.hero.edit');
+Route::post('/admin/hero/update/{id}', 'Backend\HeroController@update')->name('admin.hero.update');
 
 //footer
-Route::get('/admin/footer', 'FooterController@index')->name('admin.footer');
-Route::get('/admin/footer/edit/{id}', 'FooterController@showEdit')->name('admin.footer.edit');
-Route::post('/admin/footer/update/{id}', 'FooterController@update')->name('admin.footer.update');
+Route::get('/admin/footer', 'Backend\FooterController@index')->name('admin.footer');
+Route::get('/admin/footer/edit/{id}', 'Backend\FooterController@showEdit')->name('admin.footer.edit');
+Route::post('/admin/footer/update/{id}', 'Backend\FooterController@update')->name('admin.footer.update');
 
 //social link
-Route::get('/admin/social', 'SocialController@index')->name('admin.social');
-Route::get('/admin/social/add', 'SocialController@create')->name('admin.social.add');
-Route::post('/admin/social/add/store', 'SocialController@store')->name('admin.social.store');
+Route::get('/admin/social', 'Backend\SocialController@index')->name('admin.social');
+Route::get('/admin/social/add', 'Backend\SocialController@create')->name('admin.social.add');
+Route::post('/admin/social/add/store', 'Backend\SocialController@store')->name('admin.social.store');
 
 //skill section route
-Route::get('/admin/skill', 'SkillController@index')->name('admin.skill');
-Route::get('/admin/skill/{id}', 'SkillController@edit')->name('admin.pages.skill.edit');
-Route::post('/admin/skill/update/{id}', 'SkillController@update')->name('admin.pages.skill.update');
-Route::get('/admin/skill/delete/{id}', 'SkillController@Delete')->name('admin.pages.skill.delete');
-Route::get('/admin/skill/create/new', 'SkillController@showCreatePage')->name('admin.pages.skill.new');
-Route::post('/admin/skill/create/new/insertdata', 'SkillController@store')->name('admin.pages.skill.new.insert');
+Route::get('/admin/skill', 'Backend\SkillController@index')->name('admin.skill');
+Route::get('/admin/skill/{id}', 'Backend\SkillController@edit')->name('admin.pages.skill.edit');
+Route::post('/admin/skill/update/{id}', 'Backend\SkillController@update')->name('admin.pages.skill.update');
+Route::get('/admin/skill/delete/{id}', 'Backend\SkillController@Delete')->name('admin.pages.skill.delete');
+Route::get('/admin/skill/create/new', 'Backend\SkillController@showCreatePage')->name('admin.pages.skill.new');
+Route::post('/admin/skill/create/new/insertdata', 'Backend\SkillController@store')->name('admin.pages.skill.new.insert');
 
 //project section route
-Route::get('/admin/project/manage', 'ProjectController@index')->name('admin.project.manage');
-Route::get('/admin/project/{id}', 'ProjectController@edit')->name('admin.pages.project.edit');
-Route::post('/admin/project/update/{id}', 'ProjectController@update')->name('admin.pages.project.update');
-Route::get('/admin/project/delete/{id}', 'ProjectController@Delete')->name('admin.pages.project.delete');
-Route::get('/admin/project/create/new', 'ProjectController@showCreatePage')->name('admin.pages.project.new');
-Route::post('/admin/project/create/new/insertdata', 'ProjectController@store')->name('admin.pages.project.new.insert');
+Route::get('/admin/project/manage', 'Backend\ProjectController@index')->name('admin.project.manage');
+Route::get('/admin/project/{id}', 'Backend\ProjectController@edit')->name('admin.pages.project.edit');
+Route::post('/admin/project/update/{id}', 'Backend\ProjectController@update')->name('admin.pages.project.update');
+Route::get('/admin/project/delete/{id}', 'Backend\ProjectController@Delete')->name('admin.pages.project.delete');
+Route::get('/admin/project/create/new', 'Backend\ProjectController@showCreatePage')->name('admin.pages.project.new');
+Route::post('/admin/project/create/new/insertdata', 'Backend\ProjectController@store')->name('admin.pages.project.new.insert');
 
 //contact routes
-Route::get('admin/contact/manage','ContactController@index')->name('admin.contact.manage');
-Route::get('/admin/contact/manage/{id}', 'ContactController@showSingleData')->name('admin.contact.manage.show');
-Route::get('/admin/contact/manage/delete/{id}', 'ContactController@Delete')->name('admin.contact.manage.delete');
+Route::get('admin/contact/manage','Backend\ContactController@index')->name('admin.contact.manage');
+Route::get('/admin/contact/manage/{id}', 'Backend\ContactController@showSingleData')->name('admin.contact.manage.show');
+Route::get('/admin/contact/manage/delete/{id}', 'Backend\ContactController@Delete')->name('admin.contact.manage.delete');
 
 
 Route::group(['prefix'=>'admin'],function(){

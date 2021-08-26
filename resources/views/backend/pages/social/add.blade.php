@@ -14,15 +14,15 @@
 
           <div class="form-group">
             <label><strong>Name</strong></label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="name" class="form-control" placeholder="like 'facebook'">
           </div>
           <div class="form-group">
             <label><strong>Icon Name</strong></label>
-            <input type="text" name="icon" class="form-control">
+            <input type="text" name="icon" class="form-control" placeholder="like this 'fab fa-facebook' find from fontawesome">
           </div>
           <div class="form-group">
             <label><strong>Link</strong></label>
-            <input type="text" name="link" class="form-control">
+            <input type="text" name="link" class="form-control" placeholder="like 'facebook.com/raselranacse'">
           </div>
           <div class="form-group">
             <label><strong>Priority</strong></label>

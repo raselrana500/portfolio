@@ -13,19 +13,19 @@
               <div class="address">
                 <i class="bi bi-geo-alt"></i>
                 <h4>Address:</h4>
-                <p>{{ $row->address }}</p>
+                <p>{!! nl2br($row->address) !!}</p>
               </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>{{ $row->email }}</p>
+                <p>{!! nl2br($row->email) !!}</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>{{ $row->phone }}</p>
+                <p>{!! nl2br($row->phone) !!}</p>
               </div>
 
             </div>
@@ -34,7 +34,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="{{ route('contact.store') }}" method="post" role="form" class="php-email-form">
+          <form action="{{ route('contact.store') }}" method="POST" >
               @csrf
               @include('frontend.partials.messagess')
               <div class="row">
@@ -51,12 +51,7 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <button class="btn btn-primary mt-4" type="submit">Send Message</button>
             </form>
 
           </div>

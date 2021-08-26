@@ -1,9 +1,10 @@
 <nav class="sidebar sidebar-offcanvas mt-2" id="sidebar">
     <ul class="nav">
       <li class="nav-item nav-profile">
-        <a href="#" class="nav-link">          
+      <img src="{{ asset('public/admin/assets/images/favico.ico') }}" width="100px"alt="">
+        <a href="{{ route('admin.index') }}" class="nav-link">          
           <div class="text-wrapper">
-            <p class="profile-name">Main menu <br/></p>
+            <p class="profile-name">Main Menu<br/></p>
           </div>
         </a>
       </li>

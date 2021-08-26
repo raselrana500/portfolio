@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 23, 2021 at 09:17 PM
+-- Generation Time: Aug 26, 2021 at 06:41 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -68,7 +68,9 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `messege`, `created_at`, `updated_at`) VALUES
-(2, 'Rana', 'rana@gmail.com', 'Test Messege', 'Messege Body', '2021-08-21 19:44:50', '2021-08-21 19:44:50');
+(11, 'Rasel Rana', 'raselrana500@gmail.com', 'drhg', 'fdh', '2021-08-24 14:09:24', '2021-08-24 14:09:24'),
+(12, 'Rasel Rana', 'raselrana500@gmail.com', 'yhjn', 'hynt', '2021-08-24 23:24:10', '2021-08-24 23:24:10'),
+(13, 'Rasel Rana', 'raselrana500@gmail.com', 'uy', 'yhn', '2021-08-25 00:15:12', '2021-08-25 00:15:12');
 
 -- --------------------------------------------------------
 
@@ -123,12 +125,6 @@ CREATE TABLE `heroes` (
   `address` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `phone` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `facebooklink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `instagramlink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `twitterlink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `youtubelink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `linkedlink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `github` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `cvlink` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -138,8 +134,8 @@ CREATE TABLE `heroes` (
 -- Dumping data for table `heroes`
 --
 
-INSERT INTO `heroes` (`id`, `image`, `name`, `profession`, `address`, `email`, `phone`, `facebooklink`, `instagramlink`, `twitterlink`, `youtubelink`, `linkedlink`, `github`, `cvlink`, `created_at`, `updated_at`) VALUES
-(1, '16882.jpg', 'RASEL RANA', 'Web Developer Using PHP-Laravel', 'Village:Rowail,P.O:Satihati,\r\nP.S:Kalihati,District:Tangail', 'raselrana500@gmail.com', '01716530037,\r\n01686391286', 'https://www.facebook.com/raselranacse', 'https://www.instagram.com/rasel.rana.71465/', 'https://twitter.com/RaselRa12454491', 'https://www.youtube.com/channel/UCc_mI-T2BbSck7VbHBDY4qQ', 'https://www.linkedin.com/in/rasel-rana-26a079125/', 'https://github.com/raselrana500', 'rasel.docx', NULL, '2021-08-21 12:40:15');
+INSERT INTO `heroes` (`id`, `image`, `name`, `profession`, `address`, `email`, `phone`, `cvlink`, `created_at`, `updated_at`) VALUES
+(1, '16882.jpg', 'RASEL RANA', 'Web Developer Using PHP-Laravel', 'Village:Rowail,P.O:Satihati,\r\nP.S:Kalihati,District:Tangail', 'raselrana500@gmail.com', '01716530037,\r\n01686391286', 'CV of Rasel Rana.docx', NULL, '2021-08-25 02:55:31');
 
 -- --------------------------------------------------------
 
@@ -300,7 +296,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Rasel Rana', 'raselrana500@gmail.com', '$2y$10$.JjMuLmR3VMzPb9d.2GAp.MS9AeXSsD0gJHJ6hnPOXaP03.C6s94m', 'CoFpFqLiOiygxifdqKkZpqLBT0eSBUiG0ouxOgThtFiDhEbOBQW0RQ4C98R4', '2021-07-29 01:38:10', '2021-08-22 12:43:32');
+(1, 'Rasel Rana', 'raselrana500@gmail.com', '$2y$10$.JjMuLmR3VMzPb9d.2GAp.MS9AeXSsD0gJHJ6hnPOXaP03.C6s94m', 'UsEGpexH1kBTcjTV5z6fkZBkux1c29xzsmFPrSVg3PfPsA8M9vC00J2D5oM7', '2021-07-29 01:38:10', '2021-08-22 12:43:32');
 
 --
 -- Indexes for dumped tables
@@ -394,7 +390,7 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

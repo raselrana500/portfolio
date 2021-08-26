@@ -1,13 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
+
+use App\Http\Controllers\Controller;
 use App\Hero;
-use App\skill;
-use App\SkillDetails;
-use App\Project;
-use App\Footer;
-use App\Social;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -15,28 +12,12 @@ use File;
 use Image;
 
 class HeroController extends Controller
-{
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+{   
     public function __construct()
     {
         $this->middleware('auth:admin');
     }
 
-    
-    public function index()
-    {
-        $hero=Hero::orderBy('id','desc')->get();
-        $skill=Skill::orderBy('priority','asc')->get();
-        $skilldetails=SkillDetails::orderBy('id','asc')->get();
-        $prjects=Project::orderBy('priority','asc')->get();
-        $footer=Footer::orderBy('id','asc')->get();
-        $social=Social::orderBy('priority','asc')->get();
-        return view('frontend.layouts.master',compact('hero','skill','skilldetails','prjects','footer','social'));
-    }
 
     public function ViewInfo(){
         $hero=Hero::orderBy('id','desc')->get();
@@ -118,12 +99,6 @@ class HeroController extends Controller
         $data->address = $request->address;
         $data->email = $request->email;
         $data->phone = $request->phone;
-        $data->facebooklink = $request->facebooklink;
-        $data->instagramlink = $request->instagramlink;
-        $data->twitterlink = $request->twitterlink;
-        $data->youtubelink = $request->youtubelink;
-        $data->linkedlink = $request->linkedlink;
-        $data->github = $request->github;
 
         if($request->image > 0 ){
             if(File::exists('public/img/profile_image/'.$data->image)){

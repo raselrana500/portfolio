@@ -37,45 +37,15 @@
                 <th>Phone:  </th>
                 <td>{{ $row->phone }}</td>
             </tr>
-            <tr>
-                <th>Facebook link:  </th>
-                <td>{{ $row->facebooklink }}</td>
-            </tr>
-            <tr>
-                <th>Instagram link:  </th>
-                <td>{{ $row->instagramlink }}</td>
-            </tr>
-            <tr>
-                <th>Twitter link:  </th>
-                <td>{{ $row->twitterlink }}</td>
-            </tr>
-            <tr>
-                <th>Youtube link:  </th>
-                <td>{{ $row->youtubelink }}</td>
-            </tr>
-            <tr>
-                <th>LinkedIn link:  </th>
-                <td>{{ $row->linkedlink }}</td>
-            </tr>
-            <tr>
-                <th>CV link:  </th>
-                <td>{{ $row->cvlink }}</td>
-            </tr>
         @endforeach
         </table>
         
       </div>
       <a class="nav-link" href="{{ route('admin.hero') }}"><button  class="btn btn-success  float-right">Back</button></a>
     </div>
-  </div>
-  <!-- content-wrapper ends -->
+    <!-- content-wrapper ends -->
   <!-- partial:partials/_footer.html -->
-  <footer class="footer">
-    <div class="container-fluid clearfix">
-      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-      <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-    </div>
-  </footer>
+ @include('backend.partials.footer')
   <!-- partial -->
 
 @endsection
